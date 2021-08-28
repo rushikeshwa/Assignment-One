@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    overflow-x: hidden;
+}
+
+.navbar-toggle-my{
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.625rem;
+    font-size: 20px;
+    margin-left: 25px;
+    cursor: pointer;
+}
