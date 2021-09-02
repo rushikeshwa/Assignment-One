@@ -10,6 +10,7 @@ export class MainPanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

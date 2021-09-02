@@ -11,20 +11,20 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
-            <a routerLink="/dashboard">
+          <li  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a  routerLink="/dashboard" >
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a routerLink="/all-user">
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a  routerLink="/user"  >
               <i class="now-ui-icons users_circle-08"></i>
               <p>User</p>
             </a>
           </li>
-          <li>
-            <a href="">
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a   routerLink='/post' >
               <i class="now-ui-icons location_map-big"></i>
               <p>Post</p>
             </a>

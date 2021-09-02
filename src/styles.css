@@ -16,3 +16,7 @@ body{
     margin-left: 25px;
     cursor: pointer;
 }
+
+#main-panel .main-div{
+    margin: 6% 1% 1% 1%;
+}
