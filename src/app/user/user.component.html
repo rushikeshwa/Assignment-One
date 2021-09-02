@@ -1,1 +1,46 @@
-<p>user Component</p>
+<div class="container-fluid">
+    <div class="row d-block">
+        <h2 class="text-center">All Users</h2>
+        <div>
+            <a routerLink="/user/add-user" class="btn btn-primary pull-right">Add User</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class=" text-primary">
+                  <th>
+                    User Name
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                  <th>
+                    Created By
+                  </th>
+                  <th >
+                    Edit/Delete
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of userModel">
+                    <td>
+                      {{user.username}}
+                    </td>
+                    <td>
+                      {{user.email}}
+                    </td>
+                    <td>
+                        {{user.provider}}
+                    </td>
+                    <td class="edit-delete">
+                        <a href=""><i class="fa fa-pencil-square" aria-hidden="true"></i></a> 
+                        <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dasboard.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+
+
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
@@ -23,7 +28,9 @@ import { FooterComponent } from './dashboard/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

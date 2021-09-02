@@ -5,16 +5,6 @@ export class UsersPermissionsUser{
     provider:string |undefined;
     confirmed:boolean | undefined;
     blocked:boolean | undefined;
-    role!: {
-        id: string;
-        name:string;
-        description:string;
-        type:string;
-        permissions:[string];
-        users:[string];
-        created_by:string;
-        updated_by:string;
-    };
 }
 
 export class Posts{
