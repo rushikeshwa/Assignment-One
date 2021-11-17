@@ -1,8 +1,14 @@
-<div class="container-fluid">
+<div class="container-fluid content-box">
     <div class="row d-block">
         <h2 class="text-center">All Users</h2>
+        <div class="alert alert-danger"  *ngIf="alert">
+              <button type="button" aria-hidden="true" class="close" (click)="hideAlert()">
+                <i class="now-ui-icons ui-1_simple-remove"></i>
+              </button>
+              <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
+            </div>
         <div>
-            <a routerLink="/user/add-user" class="btn btn-primary pull-right">Add User</a>
+            <a routerLink="/user/add-user" class="btn btn-primary add-user-button pull-right">Add User</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -22,7 +28,23 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of userModel">
+                  <!-- <tr>
+                    <td>
+                     username
+                    </td>
+                    <td>
+                      email
+                    </td>
+                    <td>
+                        user.provider
+                    </td>
+                    <td class="edit-delete">
+                        <a  ><i class="fa fa-pencil-square" aria-hidden="true"></i></a> 
+                        <a onclick="deleteUser()"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+                    </td>
+                  </tr> -->
+                  <tr *ngFor="let user of userModel; let i=index">
                     <td>
                       {{user.username}}
                     </td>
@@ -31,10 +53,11 @@
                     </td>
                     <td>
                         {{user.provider}}
+                        {{user.id}}
                     </td>
                     <td class="edit-delete">
-                        <a href=""><i class="fa fa-pencil-square" aria-hidden="true"></i></a> 
-                        <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        <a routerLink="update-user/{{user.id}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> 
+                        <a (click)="deleteUser(user.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
                     </td>
                   </tr>

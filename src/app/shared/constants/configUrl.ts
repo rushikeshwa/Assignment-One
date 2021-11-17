@@ -1,4 +1,4 @@
 export const MainURL = {
   
-    HostUrl: 'https://strapi-test.promactinfo.com/',
+    HostUrl: 'https://strapi-test.promactinfo.com',
 }

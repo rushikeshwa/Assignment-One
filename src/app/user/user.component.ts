@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {UsersPermissionsUser } from 'src/app/shared/constants/AllModel';
-import { UserPermissionUrl } from 'src/app/shared/constants/AllUrl';
+import { UserPermissionUrl ,DeleteUrl} from 'src/app/shared/constants/AllUrl';
 import { StrapiTestService } from 'src/app/shared/services/strapi-test.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { StrapiTestService } from 'src/app/shared/services/strapi-test.service';
 export class UserComponent implements OnInit{
     
     userModel = Array<UsersPermissionsUser>();
-
+    alert=false;
     constructor( private apiService:StrapiTestService){ }
 
     ngOnInit(): void {
@@ -23,4 +23,19 @@ export class UserComponent implements OnInit{
             console.log(this.userModel);
         })
     }
+    deleteUser(index:any){
+        console.log(index); 
+        console.log('Deleted User ');
+        this.alert=true;
+
+    this.userModel.splice(index-1,1);
+        this.apiService.deleteRequest(index).subscribe((index)=>{
+       
+            console.log(index); 
+            
+        })
+    }
+    hideAlert(){
+        this.alert=false;
+    }   
 }
