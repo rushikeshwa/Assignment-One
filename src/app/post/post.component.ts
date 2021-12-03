@@ -11,7 +11,7 @@ import { StrapiTestService } from 'src/app/shared/services/strapi-test.service';
 
 export class PostComponent implements OnInit{
    
-    postModel=new Posts();
+    postModel:any;
 
     constructor(private apiService : StrapiTestService, ){  }
    
@@ -19,9 +19,10 @@ export class PostComponent implements OnInit{
         this.getAllPosts();        
     }
     getAllPosts(){
-        this.apiService.getRequest(PostsUrl).subscribe((data:any)=>{
+        this.apiService.getAllUsers(PostsUrl).subscribe((data:any)=>{
             this.postModel=data.result;
             console.log(data);
+            console.log(data[0]);
         })
     }
     

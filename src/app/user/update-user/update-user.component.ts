@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { UsersPermissionsUser } from 'src/app/shared/constants/AllModel';
 import { GetCurrentUer } from 'src/app/shared/constants/AllUrl';
 import { StrapiTestService } from 'src/app/shared/services/strapi-test.service';
 
@@ -10,6 +11,7 @@ import { StrapiTestService } from 'src/app/shared/services/strapi-test.service';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit {
+  currentUser:any;
 
   updateUser= new FormGroup({
     name:new FormControl(),
@@ -20,8 +22,13 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.route.snapshot.params.id);
-    this.apiService.getCurrentUser(GetCurrentUer,this.route.snapshot.params.id).subscribe((result)=>{
+    this.apiService.getCurrentUser(this.route.snapshot.params.id).subscribe((result)=>{
       console.log(result);
+      this.currentUser=result;
+
+      this.updateUser=new FormGroup({
+        name:new FormControl(result),
+      })
     });
   }
 

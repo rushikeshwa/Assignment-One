@@ -11,19 +11,21 @@ export class StrapiTestService {
 
   constructor(private http:HttpClient) { }
 
+  addNewUsers(data:any){
+    return this.http.post(this.baseUrl, data);
 
-  getRequest(url: any){
+  }
+  getAllUsers(url: any){
     return this.http.get(this.baseUrl + url)
   }
   postRequest(){
 
   }
-  getCurrentUser(url: any,id: any){
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getCurrentUser(id: any){
+    return this.http.get(`${this.baseUrl}/users/${id}`);
   }
 
-  deleteRequest(id:any){
-    // console.log(`${this.baseUrl}${id}`);
+  deleteUser(id:any){
     return this.http.delete(`${this.baseUrl}/users/${id}`);
   }
 }

@@ -1,10 +1,18 @@
-<div class="content-box">
-    <p>This is post</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, soluta maxime itaque ea deserunt illum dolorem
+<div class="container-fluid content-box">
+    <div class="row d-block">
+        <h2 class="text-left pt-2 pl-2">All Posts</h2>
+        <a routerLink='/post/add-new'  class="btn btn-primary add-post-button pull-right">Add New Post</a>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul *ngFor="let post of postModel">
+                        <li>{{post}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+        </div>
+    </div>
+</div>    
 
-    </p>
-
-
-    <a routerLink='/post/add-new'>Add new</a>
-
-</div>

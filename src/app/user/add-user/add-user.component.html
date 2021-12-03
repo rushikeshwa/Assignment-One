@@ -1,8 +1,30 @@
 <div class="container">
     <div class="row d-block">
         <h2 class="text-center">Add New User</h2>
-        <form action="">
+        <form (ngSubmit)="addNewUser()" class="form-row p-3 " [formGroup]="addNewUserForm">
+            <!-- name Field -->
+            <div class="col-md-4 mb-3">
+                <label for="name" class="form-label">User Name</label>
+                <input type="text" class="form-control" formControlName="username">
+              
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="name" class="form-label">User Email</label>
+                <input type="email" class="form-control" formControlName="email">
+              
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="name" class="form-label">Created By</label>
+                <input type="text" class="form-control" formControlName="provider">
+              
+            </div>
             
+           
+            <div class="col-12 text-center">
+                <hr>
+                <button type="submit" class="btn btn-primary px-5 mx-2" >Add User</button>
+                <a type="submit" class="btn btn-primary px-5 mx-2" routerLink="/user">Cancel</a>
+            </div>
         </form>
     </div>
 </div>
